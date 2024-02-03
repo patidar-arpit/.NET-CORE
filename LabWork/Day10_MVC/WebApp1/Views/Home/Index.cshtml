@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+i = @ViewBag.i
+<br />
+a = @ViewBag.a
+<br />
+b = @ViewBag.b
+<br />
+
+@{
+    int i = ViewBag.i;
+    int a = ViewBag.a;
+    int b = ViewBag.b;
+    int sum = a + b + i;
+}
+
+<h4>Sum is:@sum</h4>
+

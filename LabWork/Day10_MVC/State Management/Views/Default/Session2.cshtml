@@ -1,0 +1,25 @@
+﻿@using State_Management.Controllers
+@using System.Text.Json
+@inject IHttpContextAccessor contextAccessor
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+   // int x = (int)TempData["x"];  // This will give null pointer because it will not found the x in the scope the x is in the req 1 scope only not in the session scope
+    int a = (int)contextAccessor.HttpContext.Session.GetInt32("a");
+    string s = contextAccessor.HttpContext.Session.GetString("b");
+    string emp = contextAccessor.HttpContext.Session.GetString("emp");
+
+    Employee employee = JsonSerializer.Deserialize<Employee>(emp);
+    string name = employee.Name;
+}
+
+<br />
+@a
+<br />
+@s
+<br />
+@name
