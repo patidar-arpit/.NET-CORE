@@ -1,0 +1,1 @@
+This repo contains the programs for c# basic and .net core projects like .net core mvc ,web api
